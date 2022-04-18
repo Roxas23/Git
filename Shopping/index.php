@@ -15,18 +15,16 @@ session_start();
     <title>Carello</title>
 </head>
 <body>
-<nav class="nav-extended">
-  <div class="nav-wrapper">
-    <a href="index.php" class="brand-logo">Shopping</a>
-    <a href="index.php" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="Carrello.php"><i class="material-icons">local_grocery_store</i></a></li>
-      <li><a href="Login.php">Login</a></li>
-      <li><a href="Registrazione.php">Registrazione</a></li>
-    </ul>
-</div>
-</nav>
+<nav>
+    <div class="nav-wrapper">
+    <a href="#!" class="brand-logo"><i class="material-icons">storefront</i>Shopping</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#"><i class="material-icons">shopping_cart</i></a></li>
+        <li><a href="Login.php">Login</a></li>
+        <li><a href="Registrazione.php">Registra</a></li>
+      </ul>
+    </div>
+  </nav>
 <div class="row">
     <div class="col s12">
       <ul class="tabs">
@@ -50,7 +48,7 @@ session_start();
               <span class="card-title grey-text text-darken-4">Mele<i class="material-icons right">close</i></span>
               <form action="" method="post">
                 <input type="number" name="mela-quantita" min="1" max="10" id="" placeholder="Quantità">
-                <input type="submit" value="Aggiungi" class="btn">
+                <input type="submit" value="Aggiungi" class="btn" name="mela">
               </form>
             </div>
           </div>
@@ -68,7 +66,7 @@ session_start();
               <span class="card-title grey-text text-darken-4">Melone<i class="material-icons right">close</i></span>
               <form action="" method="post">
                 <input type="number" name="melone-quantita" min="1" max="10" id="" placeholder="Quantità">
-                <input type="submit" value="Aggiungi" class="btn">
+                <input type="submit" value="Aggiungi" class="btn" name="melone">
               </form>
             </div>
           </div>
@@ -86,7 +84,7 @@ session_start();
               <span class="card-title grey-text text-darken-4">Arancia<i class="material-icons right">close</i></span>
               <form action="" method="post">
                 <input type="number" name="arancia-quantita" min="1" max="10" id="" placeholder="Quantità">
-                <input type="submit" value="Aggiungi" class="btn">
+                <input type="submit" value="Aggiungi" class="btn" name="arancia">
               </form>
             </div>
           </div>
@@ -104,6 +102,19 @@ session_start();
     var instance = M.Tabs.init(el, {});
     //var instance = M.Tabs.init(el, options);
   </script>
-  
+  <?php
+    $sub_mele = isset($_POST['mela']) ? true: false;
+    $sub_meloni = isset($_POST['melone']) ? true: false;
+    $sub_arancia = isset($_POST['arancia']) ? true: false;
+
+    if($sub_mele == true){
+      $mele = $_REQUEST['mela-quantita'];
+    }elseif($sub_meloni == true){
+      $meloni = $_REQUEST['melone-quantita'];
+    }elseif($sub_arancia == true){
+      $arance = $_REQUEST['arancia-quantita'];
+    }
+  ?>
+
 </body>
 </html>
