@@ -33,22 +33,11 @@ session_start();
           <input type="text" name="nome" id="nome" placeholder="nome">
         </div>
       </div>
-    </form>
-  </div>
-  <div class="row">
-    <form action="" method="post" class="col s12">
       <div class="row">
         <div class="input-field col s5">
           <input type="text" name="cognome" id="cognome" placeholder="cognome">
         </div>
       </div>
-    </form>
-  </div>
-  </form>
-  </div>
-
-  <div class="row">
-    <form action="" method="post" class="col s12">
       <div class="row">
         <div class="input-field col s5">
           <input type="text" name="email" id="email" placeholder="email">
@@ -67,8 +56,7 @@ session_start();
   </div>
     <div class="input-field col s6">
       <input type="submit" value="Login" class="btn" name="sub">
-    </div>
-           
+    </div>      
     </form>
   </div>
     <script>
@@ -87,7 +75,7 @@ session_start();
 
     if($submit){
         $nome = $_REQUEST['nome'];
-        $cognome = $_REQUEST['congome'];
+        $cognome = $_REQUEST['cognome'];
         $email = $_REQUEST['email'];
         $password = $_REQUEST['password'];
 
@@ -99,7 +87,6 @@ session_start();
     }
 
 ?>
-
 
 </body>
 </html>
