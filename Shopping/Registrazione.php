@@ -24,6 +24,82 @@ session_start();
         <li><a href="Registrazione.php">Registra</a></li>
       </ul>
     </div>
-  </nav>
+</nav>
+
+  <div class="row">
+    <form action="" method="post" class="col s12">
+      <div class="row">
+        <div class="input-field col s5">
+          <input type="text" name="nome" id="nome" placeholder="nome">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <form action="" method="post" class="col s12">
+      <div class="row">
+        <div class="input-field col s5">
+          <input type="text" name="cognome" id="cognome" placeholder="cognome">
+        </div>
+      </div>
+    </form>
+  </div>
+  </form>
+  </div>
+
+  <div class="row">
+    <form action="" method="post" class="col s12">
+      <div class="row">
+        <div class="input-field col s5">
+          <input type="text" name="email" id="email" placeholder="email">
+        </div>
+      </div>
+  <div class="row">
+    <div class="input-field col s5">
+      <input type="password" name="password" id="password" placeholder="password">
+        <p>
+          <label>
+            <input type="checkbox" onclick="pass_visibility()"/>
+            <span>Mostra password</span>
+          </label>
+        </p>
+    </div>
+  </div>
+    <div class="input-field col s6">
+      <input type="submit" value="Login" class="btn" name="sub">
+    </div>
+           
+    </form>
+  </div>
+    <script>
+      function pass_visibility(){
+        var input = document.getElementById("password");
+        if (input.type === "password") {
+          input.type = "text";
+        } else {
+            input.type = "password";
+          }
+      }
+    </script>
+
+<?php include 'Funzioni.php';
+    $submit = isset($_POST['sub']) ? true : false;
+
+    if($submit){
+        $nome = $_REQUEST['nome'];
+        $cognome = $_REQUEST['congome'];
+        $email = $_REQUEST['email'];
+        $password = $_REQUEST['password'];
+
+        $i=set_file($nome, $cognome, $email, $password);
+        if($i==1)
+        {
+          echo "Email esistente";
+        }
+    }
+
+?>
+
+
 </body>
 </html>
