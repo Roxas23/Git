@@ -19,9 +19,6 @@ session_start();
     <div class="nav-wrapper">
     <a href="index.php" class="brand-logo"><i class="material-icons">storefront</i>Shopping</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="Carrello.php"><i class="material-icons">shopping_cart</i></a></li>
-        <li><a href="Login.php">Login</a></li>
-        <li><a href="Registrazione.php">Registra</a></li>
       </ul>
     </div>
   </nav>
@@ -65,10 +62,12 @@ session_start();
     if($submit){
         $email = $_REQUEST['email'];
         $password = $_REQUEST['password'];
-        $var=get_dati($email,$password);
+        
+        $var = get_dati($email,$password);
         if($var==1)
         {
             $_SESSION['log_email'] = $email;
+            header("location: home.php");
         }
         else{
             echo "Email o Password errati";

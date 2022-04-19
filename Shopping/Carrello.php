@@ -20,8 +20,6 @@ session_start();
     <a href="index.php" class="brand-logo"><i class="material-icons">storefront</i>Shopping</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="Carrello.php"><i class="material-icons">shopping_cart</i></a></li>
-        <li><a href="Login.php">Login</a></li>
-        <li><a href="Registrazione.php">Registra</a></li>
       </ul>
     </div>
   </nav>
