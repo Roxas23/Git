@@ -1,0 +1,10 @@
+rosario;manuele;rox@gmail.com;pippo;
+char;sdsad;asdas;1234;
+d;d;d;d;
+e;e;e;e;
+w;w;w;w;
+q;q;q;q;
+f;f;f;f;
+s;s;s;s;
+a;a;a;a;
+s;s;j;h;

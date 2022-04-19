@@ -277,6 +277,7 @@ session_start();
     var instance = M.Tabs.init(el, {});
     //var instance = M.Tabs.init(el, options);
   </script>
+
   <?php include 'Funzioni.php';
 
     $sub_mele = isset($_POST['mela']) ? true: false;
@@ -321,17 +322,14 @@ session_start();
       $polpo = $_REQUEST['polpo-quantita'];
     }
 
-    if($reg_email!=" ")
+    if($_SESSION['reg_email']!=" ")
     {
-      set_spesa($reg_email,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
+      set_spesa($mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
     }
-    if($log_email!=" ")
+    if($_SESSION['log_email']!=" ")
     {
-      set_spesa($log_email,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
+      set_spesa($mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
     }
-
-
-
 
   ?>
 
