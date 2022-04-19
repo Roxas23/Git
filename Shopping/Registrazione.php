@@ -79,10 +79,14 @@ session_start();
         $email = $_REQUEST['email'];
         $password = $_REQUEST['password'];
 
-        $i=set_file($nome, $cognome, $email, $password);
+        $i=set_dati($nome, $cognome, $email, $password);
         if($i==1)
         {
           echo "Email esistente";
+        }
+        if($i == 0)
+        {
+          $_SESSION['reg_email'] = $email;
         }
     }
 

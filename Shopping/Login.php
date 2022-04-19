@@ -65,6 +65,14 @@ session_start();
     if($submit){
         $email = $_REQUEST['email'];
         $password = $_REQUEST['password'];
+        $var=get_dati($email,$password);
+        if($var==1)
+        {
+            $_SESSION['log_email'] = $email;
+        }
+        else{
+            echo "Email o Password errati";
+        }
     }
 
 ?>

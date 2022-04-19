@@ -27,5 +27,98 @@ session_start();
   </nav>
 </body>
 </html>
+
+<?php
+if($reg_email!=" ")
+{
+    $contein_reg = get_spesa($reg_email);
+    if($contein!=0)
+    {
+        list($email,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo) = explode(";",$contein);
+        if($mele!=0){
+            echo "Mele = $mele\n";
+        }
+        if($meloni!=0){
+            echo "Moloni = $meloni\n";
+        }
+        if($arance!=0){
+            echo "Arance = $arance\n";
+        }
+        if($spaghetti!=0){
+            echo "Spaghetti = $spaghetti\n";
+        }
+        if($pennettee!=0){
+            echo "Penntette = $pennette\n";
+        }
+        if($riso!=0){
+            echo "Riso = $riso\n";
+        }
+        if($bistecca!=0){
+            echo "Bistecca = $bistecca\n";
+        }
+        if($salsiccia!=0){
+            echo "Salsiccia = $salsiccia\n";
+        }
+        if($pollo!=0){
+            echo "Polllo = $pollo\n";
+        }
+        if($salmone!=0){
+            echo "Salmone = $salmone\n";
+        }
+        if($tonno!=0){
+            echo "Tonno = $tonno\n";
+        }
+        if($polpo!=0){
+            echo "Polpo = $polpo\n";
+        }
+    }
+}
+if($log_email!=" ")
+{
+    $contein_log = get_spesa($log_email);
+    if($contein!=0)
+    {
+        list($email,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo) = explode(";",$contein);
+        if($mele!=0){
+            echo "Mele = $mele\n";
+        }
+        if($meloni!=0){
+            echo "Moloni = $meloni\n";
+        }
+        if($arance!=0){
+            echo "Arance = $arance\n";
+        }
+        if($spaghetti!=0){
+            echo "Spaghetti = $spaghetti\n";
+        }
+        if($pennettee!=0){
+            echo "Penntette = $pennette\n";
+        }
+        if($riso!=0){
+            echo "Riso = $riso\n";
+        }
+        if($bistecca!=0){
+            echo "Bistecca = $bistecca\n";
+        }
+        if($salsiccia!=0){
+            echo "Salsiccia = $salsiccia\n";
+        }
+        if($pollo!=0){
+            echo "Polllo = $pollo\n";
+        }
+        if($salmone!=0){
+            echo "Salmone = $salmone\n";
+        }
+        if($tonno!=0){
+            echo "Tonno = $tonno\n";
+        }
+        if($polpo!=0){
+            echo "Polpo = $polpo\n";
+        }
+    }
+}
+?>
+
+
 </body>
 </html>
