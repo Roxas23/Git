@@ -1,8 +1,7 @@
 
 
 
-<?php error_reporting (E_ALL ^ E_NOTICE);
-session_start();
+<?php //error_reporting (E_ALL ^ E_NOTICE);
 
 function set_dati($nome, $cognome, $email, $password)
 {
@@ -25,17 +24,15 @@ function set_dati($nome, $cognome, $email, $password)
     }
 }
 
-function set_spesa($mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo)
+function set_spesa($m,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo)
 {
-    $em=$_SESSION['reg_email'];
     $i=0;
-    $p = fopen("spesa.txt", "w+");
-
+    $p = fopen("spesa.txt", "a+");
     while(!feof($p))
     {
         $row=fgets($p);
         list($email,$mel,$melo,$arac,$spag,$pen,$ris,$bist,$sals,$pol,$salm,$tonn,$polp) = explode(";",$row);
-        if($email == $em)
+        if($email == $m)
         {
             if($mel !=$mele && $mele > 0 ){
                 $mel = $mele;
@@ -73,11 +70,11 @@ function set_spesa($mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$s
             if($polp!=$polpo && $polpo > 0 ){
                 $polp =$polpo;
             }
-            $str="$email;$mel;$melo;$arac;$spag;$pen;$ris;$bist;$sals;$pol;$salm;$tonn;$polp;\n";
+            $str="$m;$mel;$melo;$arac;$spag;$pen;$ris;$bist;$sals;$pol;$salm;$tonn;$polp;\n";
             $i=1;
         }
         if($i!=1){
-        $str="$email;$mel;$melo;$arac;$spag;$pen;$ris;$bist;$sals;$pol;$salm;$tonn;$polp;\n";
+        $str="$m;$mel;$melo;$arac;$spag;$pen;$ris;$bist;$sals;$pol;$salm;$tonn;$polp;\n";
         }
         fwrite($p, $str);
     }

@@ -295,41 +295,85 @@ session_start();
 
     if($sub_mele == true){
       $mele = $_REQUEST['mela-quantita'];
-    }elseif($sub_meloni == true){
+    }
+    else{
+        $mele = 0;
+    }
+    
+    if($sub_meloni == true){
       $meloni = $_REQUEST['melone-quantita'];
-    }elseif($sub_arancia == true){
+    }else{
+        $meloni=0;
+    }
+    if($sub_arancia == true){
       $arance = $_REQUEST['arancia-quantita'];
     }
-    if($sub_spaghetti == true){
-      $spaghetti = $_REQUEST['spaghetti-quantita'];
-    }elseif($sub_pennette == true){
-      $pennette = $_REQUEST['pennnette-quantita'];
-    }elseif($sub_riso == true){
-      $riso = $_REQUEST['riso-quantita'];
-    }
-    if($sub_bistecca == true){
-      $bistecca = $_REQUEST['bistecca-quantita'];
-    }elseif($sub_salsiccia == true){
-      $salsiccia = $_REQUEST['salsiccia-quantita'];
-    }elseif($sub_pollo == true){
-      $pollo = $_REQUEST['pollo-quantita'];
-    }
-    if($sub_salmone == true){
-      $salmone = $_REQUEST['salmone-quantita'];
-    }elseif($sub_tonno == true){
-      $tonno = $_REQUEST['tonno-quantita'];
-    }elseif($sub_polpo == true){
-      $polpo = $_REQUEST['polpo-quantita'];
+    else{
+        $arance=0;
     }
 
-    if($_SESSION['reg_email']!=" ")
-    {
-      set_spesa($mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
+    if($sub_spaghetti == true){
+      $spaghetti = $_REQUEST['spaghetti-quantita'];
+    }else{
+        $spaghetti=0;
     }
-    if($_SESSION['log_email']!=" ")
-    {
-      set_spesa($mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
+    if($sub_pennette == true){
+      $pennette = $_REQUEST['pennnette-quantita'];
+    }else{
+        $pennette=0;
     }
+    if($sub_riso == true){
+      $riso = $_REQUEST['riso-quantita'];
+    }
+    else{
+        $riso=0;
+    }
+
+    if($sub_bistecca == true){
+      $bistecca = $_REQUEST['bistecca-quantita'];
+    }else{
+        $bistecca=0;
+    }
+    if($sub_salsiccia == true){
+      $salsiccia = $_REQUEST['salsiccia-quantita'];
+    }else{
+        $salsiccia=0;
+    }
+    if($sub_pollo == true){
+      $pollo = $_REQUEST['pollo-quantita'];
+    }
+    else{
+        $pollo=0;
+    }
+
+    if($sub_salmone == true){
+      $salmone = $_REQUEST['salmone-quantita'];
+    }else{
+        $salmone=0;
+    }
+    if($sub_tonno == true){
+      $tonno = $_REQUEST['tonno-quantita'];
+    }else{
+        $tonno=0;
+    }
+    if($sub_polpo == true){
+      $polpo = $_REQUEST['polpo-quantita'];
+    }
+    else{
+        $polpo=0;
+    }
+
+    $m=$_SESSION['reg_email'];
+    echo "$m $mele";
+
+    if($m!="")
+    {
+      set_spesa($m,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
+    }
+    /*if($_SESSION['log_email']!=" ")
+    {
+      //set_spesa($mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
+    }*/
 
   ?>
 
