@@ -49,7 +49,7 @@ session_start();
               <span class="card-title grey-text text-darken-4">Mele<i class="material-icons right">close</i></span>
               <form action="" method="post">
                 <input type="number" name="mela-quantita" min="1" max="10" id="" placeholder="Quantità">
-                <input type="submit" value="Aggiungi" class="btn" name="mela">
+                <input type="submit" value="Aggiungi" class="btn" name="mele">
               </form>
             </div>
           </div>
@@ -185,7 +185,7 @@ session_start();
               <span class="card-title grey-text text-darken-4">Salsiccia<i class="material-icons right">close</i></span>
               <form action="" method="post">
                 <input type="number" name="alsiccia-quantita" min="1" max="10" id="" placeholder="Quantità">
-                <input type="submit" value="Aggiungi" class="btn" name="alsiccia">
+                <input type="submit" value="Aggiungi" class="btn" name="salsiccia">
               </form>
             </div>
           </div>
@@ -280,18 +280,18 @@ session_start();
 
   <?php include 'Funzioni.php';
 
-    $sub_mele = isset($_POST['mela']) ? true: false;
-    $sub_meloni = isset($_POST['melone']) ? true: false;
+    $sub_mele = isset($_POST['mele']) ? true: false;
+    $sub_meloni = isset($_POST['meloni']) ? true: false;
     $sub_arancia = isset($_POST['arancia']) ? true: false;
-    $sub_spaghetti= isset($_POST['mela']) ? true: false;
-    $sub_pennette = isset($_POST['melone']) ? true: false;
-    $sub_riso = isset($_POST['arancia']) ? true: false;
-    $sub_bistecca = isset($_POST['mela']) ? true: false;
-    $sub_salsiccia = isset($_POST['melone']) ? true: false;
-    $sub_pollo = isset($_POST['arancia']) ? true: false;
-    $sub_salmone = isset($_POST['mela']) ? true: false;
-    $sub_tonno = isset($_POST['melone']) ? true: false;
-    $sub_polpo = isset($_POST['arancia']) ? true: false;
+    $sub_spaghetti= isset($_POST['spaghetti']) ? true: false;
+    $sub_pennette = isset($_POST['pennette']) ? true: false;
+    $sub_riso = isset($_POST['riso']) ? true: false;
+    $sub_bistecca = isset($_POST['bistecca']) ? true: false;
+    $sub_salsiccia = isset($_POST['salsiccia']) ? true: false;
+    $sub_pollo = isset($_POST['pollo']) ? true: false;
+    $sub_salmone = isset($_POST['salmone']) ? true: false;
+    $sub_tonno = isset($_POST['tonno']) ? true: false;
+    $sub_polpo = isset($_POST['polpo']) ? true: false;
 
     if($sub_mele == true){
       $mele = $_REQUEST['mela-quantita'];
@@ -313,14 +313,18 @@ session_start();
 
     if($sub_spaghetti == true){
       $spaghetti = $_REQUEST['spaghetti-quantita'];
-    }else{
+    }
+    else{
         $spaghetti=0;
     }
+
     if($sub_pennette == true){
       $pennette = $_REQUEST['pennette-quantita'];
-    }else{
+    }
+    else{
         $pennette=0;
     }
+
     if($sub_riso == true){
       $riso = $_REQUEST['riso-quantita'];
     }
@@ -330,12 +334,14 @@ session_start();
 
     if($sub_bistecca == true){
       $bistecca = $_REQUEST['bistecca-quantita'];
-    }else{
+    }
+    else{
         $bistecca=0;
     }
     if($sub_salsiccia == true){
       $salsiccia = $_REQUEST['salsiccia-quantita'];
-    }else{
+    }
+    else{
         $salsiccia=0;
     }
     if($sub_pollo == true){
@@ -364,18 +370,11 @@ session_start();
 
     $m=$_SESSION['reg_email'];
 
-    $str="$m;$mele;$meloni;$arance;$spaghetti;$pennette;$riso;$bistecca;$salsiccia;$pollo;$salmone;$tonno;$polpo;\n";
+    $str="$mele;$meloni;$arance;$spaghetti;$pennette;$riso;$bistecca;$salsiccia;$pollo;$salmone;$tonno;$polpo;\n";
     echo "$str";
-    //spesa($m,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
 
-    /*if($m!="")
-    {
-      set_spesa($m,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
-    }*/
-    /*if($_SESSION['log_email']!=" ")
-    {
-      //set_spesa($mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
-    }*/
+    $nome_file = $m .".txt";
+    echo "$nome_file";
 
   ?>
 
