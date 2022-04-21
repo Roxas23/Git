@@ -184,7 +184,7 @@ session_start();
             <div class="card-reveal">
               <span class="card-title grey-text text-darken-4">Salsiccia<i class="material-icons right">close</i></span>
               <form action="" method="post">
-                <input type="number" name="alsiccia-quantita" min="1" max="10" id="" placeholder="Quantità">
+                <input type="number" name="salsiccia-quantita" min="1" max="10" id="" placeholder="Quantità">
                 <input type="submit" value="Aggiungi" class="btn" name="salsiccia">
               </form>
             </div>
@@ -369,10 +369,9 @@ session_start();
     }
 
     $m=$_SESSION['reg_email'];
-    $nome_file = $m .".txt";
-    echo "$nome_file";
+    $nome_file = $m . '.txt';
     set_spesa($nome_file,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
-
+//prova($nome_file);
   ?>
 
 </body>

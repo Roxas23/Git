@@ -41,9 +41,13 @@ function get_dati($email, $password)
 
 function set_spesa($nome_file,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo)
 {
-    $p = fopen("$nome_file", "w+");
-    $row=fgets($p);
+    $p = fopen("spesa.txt","r");
+    $row = fgets($p);
+    fclose($p);
+
     list($mel,$melo,$arac,$spag,$pen,$ris,$bist,$sals,$pol,$salm,$tonn,$polp) = explode(";",$row);
+
+    $p = fopen("spesa.txt","w");
 
     if($mele < $mel ){
         $mele = $mel;
@@ -82,12 +86,28 @@ function set_spesa($nome_file,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$
         $polpo =$polp;
     }
     
-    $str = "$mele;$meloni;$arance;$spaghetti;$pennette;$riso;$bistecca;$salsiccia;$pollo;$salmone;$tonno;$polpo;\n";
+    $str = "$mele;$meloni;$arance;$spaghetti;$pennette;$riso;$bistecca;$salsiccia;$pollo;$salmone;$tonno;$polpo;";
+    fwrite($p,$str);
     fclose($p);
 
 }
 
+function prova($nome_file)
+{
 
+    $file="/Applications/XAMPP/xamppfiles/htdocs/Git/Shopping/file-spesa/" ."$nome_file";
+    echo "$file";
+    //creare file
+    touch($file);
+
+    //cancellare file
+    /*$file = 'miofile.txt';
+    if (unlink($file)) {
+    echo 'il file è stato cancellato';
+    }else{
+    echo 'il file NON è stato cancellato';
+    }*/
+}
 
 
 ?>
