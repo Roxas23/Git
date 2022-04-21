@@ -369,12 +369,9 @@ session_start();
     }
 
     $m=$_SESSION['reg_email'];
-
-    $str="$mele;$meloni;$arance;$spaghetti;$pennette;$riso;$bistecca;$salsiccia;$pollo;$salmone;$tonno;$polpo;\n";
-    echo "$str";
-
     $nome_file = $m .".txt";
     echo "$nome_file";
+    set_spesa($nome_file,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
 
   ?>
 
