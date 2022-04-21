@@ -299,7 +299,6 @@ session_start();
     else{
         $mele = 0;
     }
-    
     if($sub_meloni == true){
       $meloni = $_REQUEST['melone-quantita'];
     }else{
@@ -318,7 +317,7 @@ session_start();
         $spaghetti=0;
     }
     if($sub_pennette == true){
-      $pennette = $_REQUEST['pennnette-quantita'];
+      $pennette = $_REQUEST['pennette-quantita'];
     }else{
         $pennette=0;
     }
@@ -364,12 +363,15 @@ session_start();
     }
 
     $m=$_SESSION['reg_email'];
-    echo "$m $mele";
 
-    if($m!="")
+    $str="$m;$mele;$meloni;$arance;$spaghetti;$pennette;$riso;$bistecca;$salsiccia;$pollo;$salmone;$tonno;$polpo;\n";
+    echo "$str";
+    //spesa($m,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
+
+    /*if($m!="")
     {
       set_spesa($m,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
-    }
+    }*/
     /*if($_SESSION['log_email']!=" ")
     {
       //set_spesa($mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
