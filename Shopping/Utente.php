@@ -31,7 +31,9 @@ session_start();
     <a href="#!" class="collection-item"><span class="badge">14</span>Alan</a>
   </div>
 
+
 <?php include 'Funzioni.php';
+
 
 
 
