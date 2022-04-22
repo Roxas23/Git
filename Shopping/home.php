@@ -373,16 +373,16 @@ session_start();
     if($i==0)
     {
         $m=$_SESSION['reg_email'];
-        $nome_file = $m . '.txt';
+        $nome_file= $m . ".txt";
         set_spesa($nome_file,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
     }
     else if($i==1)
     {
         $m=$_SESSION['log_email'];
-        $nome_file = $m . '.txt';
+        $nome_file= $m . ".txt";
         set_spesa($nome_file,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
     }
-//prova($nome_file);
+   
   ?>
 
 </body>

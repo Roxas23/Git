@@ -41,14 +41,24 @@ function get_dati($email, $password)
 
 function set_spesa($nome_file,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo)
 {
-    //$file="/Applications/XAMPP/xamppfiles/htdocs/Git/Shopping/file-spesa/" ."$nome_file";
-    $p = fopen("spesa.txt","r");
+    $controllo=0;
+    $file="/Applications/XAMPP/xamppfiles/htdocs/Git/Shopping/file-spesa/" ."$nome_file";
+    
+    if (false === file_exists($file)){
+        $controllo=1;
+    }
+
+    if($controllo == 0){
+    touch($file);
+    }
+
+    $p = fopen($file,"r");
     $row = fgets($p);
     fclose($p);
 
     list($mel,$melo,$arac,$spag,$pen,$ris,$bist,$sals,$pol,$salm,$tonn,$polp) = explode(";",$row);
 
-    $p = fopen("spesa.txt","w");
+    $p = fopen($file,"w");
 
     if($mele < $mel ){
         $mele = $mel;
@@ -99,9 +109,10 @@ function set_spesa($nome_file,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$
 
 function prova($nome_file)
 {
+    echo $nome_file;
     $file="/Applications/XAMPP/xamppfiles/htdocs/Git/Shopping/file-spesa/" ."$nome_file";
     //creare file
-    //touch($file);
+    touch($file);
 
     //cancellare file
     /*$file = 'miofile.txt';
