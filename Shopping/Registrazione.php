@@ -69,7 +69,7 @@ session_start();
 
 <?php include 'Funzioni.php';
     $submit = isset($_POST['sub']) ? true : false;
-
+      $i=0;
     if($submit){
         $nome = $_REQUEST['nome'];
         $cognome = $_REQUEST['cognome'];
@@ -84,6 +84,7 @@ session_start();
         if($i == 0)
         {
           $_SESSION['reg_email'] = $email;
+          $_SESSION['identiti'] = $i;
           header("location: home.php");
         }
     }

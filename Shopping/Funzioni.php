@@ -88,6 +88,7 @@ function set_spesa($nome_file,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$
     
     $str = "$mele;$meloni;$arance;$spaghetti;$pennette;$riso;$bistecca;$salsiccia;$pollo;$salmone;$tonno;$polpo;";
     fwrite($p,$str);
+    echo $str;
     fclose($p);
 
 }
@@ -97,8 +98,12 @@ function prova($nome_file)
 
     $file="/Applications/XAMPP/xamppfiles/htdocs/Git/Shopping/file-spesa/" ."$nome_file";
     echo "$file";
+
     //creare file
-    touch($file);
+    //touch($file);
+
+    $p = fopen($file,"w");
+    fclose($p);
 
     //cancellare file
     /*$file = 'miofile.txt';
