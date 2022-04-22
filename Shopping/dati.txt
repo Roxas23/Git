@@ -1,6 +1,0 @@
-Rosario;Manuele;rosario@gmail.com;pippo;
-rosario;Manuele;rox@gmail.com;pippo;
-cha;Fernando;charu@gmail.com;pippo;
-Paolo;manu;paolo@gmail.com;pippo;
-fasdfa;fasdfa;fsdaf;fadsfa;
-fdsgdgs;gfdsgsd;gsdgs;sfdgsgsd;
