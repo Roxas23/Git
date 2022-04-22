@@ -66,8 +66,8 @@ session_start();
             <div class="card-reveal">
               <span class="card-title grey-text text-darken-4">Melone<i class="material-icons right">close</i></span>
               <form action="" method="post">
-                <input type="number" name="melone-quantita" min="1" max="10" id="" placeholder="Quantità">
-                <input type="submit" value="Aggiungi" class="btn" name="melone">
+                <input type="number" name="meloni-quantita" min="1" max="10" id="" placeholder="Quantità">
+                <input type="submit" value="Aggiungi" class="btn" name="meloni">
               </form>
             </div>
           </div>
@@ -300,7 +300,7 @@ session_start();
         $mele = 0;
     }
     if($sub_meloni == true){
-      $meloni = $_REQUEST['melone-quantita'];
+      $meloni = $_REQUEST['meloni-quantita'];
     }else{
         $meloni=0;
     }
