@@ -57,6 +57,7 @@ session_start();
         }
     </script>
 <?php include 'Funzioni.php';
+
     $submit = isset($_POST['sub']) ? true : false;
     $i=1;
     if($submit){
