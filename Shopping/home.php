@@ -21,6 +21,7 @@ session_start();
     <a href="home.php" class="brand-logo"><i class="material-icons">storefront</i>Shopping</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="Carrello.php"><i class="material-icons">shopping_cart</i></a></li>
+        <li><a href="Utente.php"><i class="material-icons">account_box</i></a></li>
         <li><a href="index.php">Logout</a></li>
       </ul>
     </div>

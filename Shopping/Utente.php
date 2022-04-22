@@ -12,20 +12,27 @@ session_start();
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
-    <title>Document</title>
+    <title>Carello</title>
 </head>
 <body>
-
 <nav>
     <div class="nav-wrapper">
     <a href="home.php" class="brand-logo"><i class="material-icons">storefront</i>Shopping</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="Utente.php"><i class="material-icons">account_box</i></a></li>
+        <li><a href="Carrello.php"><i class="material-icons">shopping_cart</i></a></li>
+        <li><a href="index.php">Logout</a></li>
       </ul>
     </div>
 </nav>
+<div class="collection">
+    <a href="#!" class="collection-item"><span class="badge">1</span>Alan</a>
+    <a href="#!" class="collection-item"><span class="new badge">4</span>Alan</a>
+    <a href="#!" class="collection-item">Alan</a>
+    <a href="#!" class="collection-item"><span class="badge">14</span>Alan</a>
+  </div>
 
-<?php
+<?php include 'Funzioni.php';
+
 
 
 ?>

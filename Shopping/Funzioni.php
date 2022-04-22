@@ -42,7 +42,7 @@ function get_dati($email, $password)
 function set_spesa($nome_file,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo)
 {
     $controllo=0;
-    $file="/Applications/XAMPP/xamppfiles/htdocs/Git/Shopping/file-spesa/" ."$nome_file";
+    $file="./file-spesa/" ."$nome_file";
     
     if (false === file_exists($file)){
         $controllo=1;

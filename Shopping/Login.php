@@ -26,7 +26,7 @@ session_start();
         <form action="" method="post" class="col s12">
             <div class="row">
                 <div class="input-field col s5">
-                    <input type="text" name="email" id="email" placeholder="email">
+                    <input type="email" name="email" id="email" placeholder="email">
                 </div>
             </div>
             <div class="row">

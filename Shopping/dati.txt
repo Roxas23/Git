@@ -1,1 +1,2 @@
 Rosario;Manuele;rosario@gmail.com;pippo;
+cha;fe;charu@gmail.com;charu;
