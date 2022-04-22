@@ -370,8 +370,8 @@ session_start();
 
     $m=$_SESSION['reg_email'];
     $nome_file = $m . '.txt';
-    set_spesa($nome_file,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
-//prova($nome_file);
+    //set_spesa($nome_file,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
+prova($nome_file);
   ?>
 
 </body>
