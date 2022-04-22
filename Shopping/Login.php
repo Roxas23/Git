@@ -56,9 +56,9 @@ session_start();
             }
         }
     </script>
-<?php
+<?php include 'Funzioni.php';
     $submit = isset($_POST['sub']) ? true : false;
-        $i=1;
+    $i=1;
     if($submit){
         $email = $_REQUEST['email'];
         $password = $_REQUEST['password'];

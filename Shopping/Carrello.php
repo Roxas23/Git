@@ -17,14 +17,11 @@ session_start();
 <body>
 <nav>
     <div class="nav-wrapper">
-    <a href="index.php" class="brand-logo"><i class="material-icons">storefront</i>Shopping</a>
+    <a href="home.php" class="brand-logo"><i class="material-icons">storefront</i>Shopping</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="Carrello.php"><i class="material-icons">shopping_cart</i></a></li>
       </ul>
     </div>
-  </nav>
-</body>
-</html>
+</nav>
 
 <?php
 

@@ -31,7 +31,7 @@ function get_dati($email, $password)
         list($nome,$cognome,$eml,$pass) = explode(";",$arr);
         if(($eml == $email) && ($pass == $password))
         {
-            return $i = 1;  
+            $i = 1;
         } 
     }
     fclose($p);
@@ -41,6 +41,7 @@ function get_dati($email, $password)
 
 function set_spesa($nome_file,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo)
 {
+    //$file="/Applications/XAMPP/xamppfiles/htdocs/Git/Shopping/file-spesa/" ."$nome_file";
     $p = fopen("spesa.txt","r");
     $row = fgets($p);
     fclose($p);
@@ -93,17 +94,14 @@ function set_spesa($nome_file,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$
 
 }
 
+
+
+
 function prova($nome_file)
 {
-
     $file="/Applications/XAMPP/xamppfiles/htdocs/Git/Shopping/file-spesa/" ."$nome_file";
-    echo "$file";
-
     //creare file
     //touch($file);
-
-    $p = fopen($file,"w");
-    fclose($p);
 
     //cancellare file
     /*$file = 'miofile.txt';

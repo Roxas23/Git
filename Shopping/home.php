@@ -43,6 +43,7 @@ session_start();
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">Mele<i class="material-icons right">more_vert</i></span>
+              <p>0.90€</p>
               <p>clicca per aggiungere al carrello</p>
             </div>
             <div class="card-reveal">
@@ -373,15 +374,15 @@ session_start();
     {
         $m=$_SESSION['reg_email'];
         $nome_file = $m . '.txt';
-    //set_spesa($nome_file,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
+        set_spesa($nome_file,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
     }
     else if($i==1)
     {
         $m=$_SESSION['log_email'];
         $nome_file = $m . '.txt';
-    //set_spesa($nome_file,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
+        set_spesa($nome_file,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo);
     }
-prova($nome_file);
+//prova($nome_file);
   ?>
 
 </body>
