@@ -29,6 +29,7 @@ session_start();
       <input type="submit" value="Registrazione" class="btn" name="sub">
     </div>      
     </form>
+</div>
 
     <?php 
     $value = isset($_POST ['sub']) ? $_POST ['sub'] : '';

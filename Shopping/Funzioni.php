@@ -1,3 +1,16 @@
+<style>
+table {
+    border: 1px solid grey;
+    border-collapse: separate;
+    border-spacing: 4px;
+    margin: 60px auto;
+    background:  #e0e0e0;
+    padding: 17px;
+    width: 800px;
+}
+
+
+</style>
 <?php 
 error_reporting (E_ALL ^ E_NOTICE);
 error_reporting(E_ERROR | E_PARSE);
@@ -62,42 +75,19 @@ function set_spesa($nome_file,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$
 
     $p = fopen($file,"w");
 
-    if($mele < $mel ){
-        $mele = $mel;
-    }
-    if($meloni < $melo ){
-        $meloni =$melo;
-    }
-    if($arance < $arac ){
-        $arance =$arac;
-    }
-    if($spaghetti < $spag){
-        $spaghetti = $spag;
-    }
-    if($pennette < $pen ){
-        $pennette =$pen;
-    }
-    if($riso < $ris){
-        $riso = $ris;
-    }
-    if($bistecca < $bist ){
-        $bistecca = $bist;
-    }
-    if($salsiccia < $sals ){
-        $salsiccia = $sals;
-    }
-    if($pollo < $pol ){
-        $pollo = $pol;
-    }
-    if($salmone < $salm ){
-        $salmone = $salm;
-    }
-    if($tonno < $tonn){
-        $tonno = $tonn;
-    }
-    if($polpo< $polpo){
-        $polpo = $polp;
-    }
+       $mele= $mele + $mel;
+       $meloni = $meloni + $melo;
+       $arance =$arance + $arac;
+       $spaghetti = $spaghetti + $spag;
+       $pennette =$pennette + $pen;
+       $riso = $riso + $ris;
+       $bistecca = $bistecca + $bist;
+       $salsiccia = $salsiccia + $sals;
+       $pollo = $pollo + $pol;
+       $salmone = $salmone + $salm;
+       $tonno = $tonno + $tonn;
+       $polpo = $polpo + $polp;
+
     
     $str = "$mele;$meloni;$arance;$spaghetti;$pennette;$riso;$bistecca;$salsiccia;$pollo;$salmone;$tonno;$polpo;";
     fwrite($p,$str);
@@ -227,10 +217,9 @@ function get_spesa($m)
             ?><tr>
                 <td>Polpo:</td>
                 <td><?php echo $polpo; ?></td>
-                <td><?php echo $polpo * 12; ?>€</td>
+                <td><?php echo $polpo * 11.49; ?>€</td>
             </tr>
             <?php
-
         }
 
 }

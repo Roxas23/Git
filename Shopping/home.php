@@ -63,6 +63,7 @@ session_start();
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">Melone<i class="material-icons right">more_vert</i></span>
+              <p>3.25€</p>
               <p>clicca per aggiungere al carrello</p>
             </div>
             <div class="card-reveal">
@@ -81,6 +82,7 @@ session_start();
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">Arancia<i class="material-icons right">more_vert</i></span>
+              <p>1.25€</p>
               <p>clicca per aggiungere al carrello</p>
             </div>
             <div class="card-reveal">
@@ -104,6 +106,7 @@ session_start();
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">Spaghetti<i class="material-icons right">more_vert</i></span>
+              <p>0.89€</p>
               <p>clicca per aggiungere al carrello</p>
             </div>
             <div class="card-reveal">
@@ -122,6 +125,7 @@ session_start();
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">Pennette<i class="material-icons right">more_vert</i></span>
+              <p>0.89€</p>
               <p>clicca per aggiungere al carrello</p>
             </div>
             <div class="card-reveal">
@@ -140,6 +144,7 @@ session_start();
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">Riso<i class="material-icons right">more_vert</i></span>
+              <p>1.49€</p>
               <p>clicca per aggiungere al carrello</p>
             </div>
             <div class="card-reveal">
@@ -163,6 +168,7 @@ session_start();
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">Bistecca<i class="material-icons right">more_vert</i></span>
+              <p>4€</p>
               <p>clicca per aggiungere al carrello</p>
             </div>
             <div class="card-reveal">
@@ -181,6 +187,7 @@ session_start();
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">Salsiccia<i class="material-icons right">more_vert</i></span>
+              <p>3.50€</p>
               <p>clicca per aggiungere al carrello</p>
             </div>
             <div class="card-reveal">
@@ -199,6 +206,7 @@ session_start();
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">Pollo<i class="material-icons right">more_vert</i></span>
+              <p>4.29€</p>
               <p>clicca per aggiungere al carrello</p>
             </div>
             <div class="card-reveal">
@@ -222,6 +230,7 @@ session_start();
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">Salmone<i class="material-icons right">more_vert</i></span>
+              <p>7.99€</p>
               <p>clicca per aggiungere al carrello</p>
             </div>
             <div class="card-reveal">
@@ -240,6 +249,7 @@ session_start();
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">Tonno<i class="material-icons right">more_vert</i></span>
+              <p>6.50€</p>
               <p>clicca per aggiungere al carrello</p>
             </div>
             <div class="card-reveal">
@@ -258,6 +268,7 @@ session_start();
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">Polpo<i class="material-icons right">more_vert</i></span>
+              <p>11.49€</p>
               <p>clicca per aggiungere al carrello</p>
             </div>
             <div class="card-reveal">

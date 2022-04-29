@@ -1,2 +1,4 @@
 Rosario;Manuele;rosario@gmail.com;pippo;
 Pietro;Di Battista;pietrodibattista@rincoglioniti.it;rinco01;
+Giuseppe;Sollena;sollena.giuseppe@gmail.com;ciaociao;
+pippo;mino;pippo@gmail.com;pippo;
