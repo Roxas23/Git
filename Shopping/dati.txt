@@ -1,2 +1,2 @@
 Rosario;Manuele;rosario@gmail.com;pippo;
-cha;fe;charu@gmail.com;charu;
+Pietro;Di Battista;pietrodibattista@rincoglioniti.it;rinco01;

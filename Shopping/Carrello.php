@@ -25,7 +25,21 @@ session_start();
     </div>
 </nav>
 
-<?php
+<?php include 'Funzioni.php';
+error_reporting (E_ALL ^ E_NOTICE);
+
+    $i=$_SESSION['identiti'];
+    if($i==0)
+    {
+        $m=$_SESSION['reg_email'];
+        get_spesa($m);
+    }
+    else if($i==1)
+    {
+        $m=$_SESSION['log_email'];
+        get_spesa($m);
+    }
+
 
 
 ?>

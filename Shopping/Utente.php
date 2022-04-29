@@ -24,16 +24,21 @@ session_start();
       </ul>
     </div>
 </nav>
-<div class="collection">
-    <a href="#!" class="collection-item"><span class="badge">1</span>Alan</a>
-    <a href="#!" class="collection-item"><span class="new badge">4</span>Alan</a>
-    <a href="#!" class="collection-item">Alan</a>
-    <a href="#!" class="collection-item"><span class="badge">14</span>Alan</a>
-  </div>
-
 
 <?php include 'Funzioni.php';
+error_reporting (E_ALL ^ E_NOTICE);
 
+    $i=$_SESSION['identiti'];
+    if($i==0)
+    {
+        $m=$_SESSION['reg_email'];
+        get_utente($m);
+    }
+    else if($i==1)
+    {
+        $m=$_SESSION['log_email'];
+        get_utente($m);
+    }
 
 
 

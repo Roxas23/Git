@@ -68,6 +68,7 @@ session_start();
     </script>
 
 <?php include 'Funzioni.php';
+error_reporting (E_ALL ^ E_NOTICE);
     $submit = isset($_POST['sub']) ? true : false;
       $i=0;
     if($submit){
