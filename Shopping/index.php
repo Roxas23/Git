@@ -20,6 +20,8 @@ session_start();
     <a href="index.php" class="brand-logo"><i class="material-icons">storefront</i>Shopping</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
 </nav>
+
+<h4>BENVENUTO!! <i class="material-icons">sentiment_very_satisfied</i></h4>
 <div class="row">
     <form action="" method="post" class="col s12">
     <div class="input-field col s6">
