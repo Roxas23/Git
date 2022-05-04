@@ -97,6 +97,7 @@ function set_spesa($nome_file,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$
 
 function get_spesa($m)
 {
+    $tott=0;
     $nome_file= $m . ".txt";
     $file="./file-spesa/" ."$nome_file";
     
@@ -105,122 +106,273 @@ function get_spesa($m)
     fclose($p);
 
     list($mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo) = explode(";",$row);
-    ?><table class="highlight">
-    <thead>
-    <tr>
-        <th>Spesa</th>
-        <th>Quantità</th>
-        <th>Costo</th>
-        </tr>
-    </thead>
-    <tbody>
+    ?><ul class="collection with-header">
+        <form action="" method="post" class="col s12">
+        <li class="collection-header"><h4>Carrello</h4></li><?php
+    if($mele != 0 )
+    {
+    ?>
+        <li class="collection-item"><div>
+            <?php
+            echo "Mele = $mele &nbsp;";
+            $cmele =   $mele * 0.90;
+            $tott=$tott+$cmele;
+            echo "&nbsp;&nbsp;&nbsp;&nbsp;$cmele"; ?>€&nbsp;&nbsp;&nbsp;
+    
+            <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="melepiu" ><i class="material-icons">add_circle_outline </i></button>
+            <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="melemeno" ><i class="material-icons">remove_circle_outline</i></button>
+            <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="meletogli" ><i class="material-icons"> highlight_off </i></button>
+    <?php
+    }
+    if($meloni != 0 )
+    {
+        ?><li class="collection-item"><div>
         <?php
-
-        if($mele != 0 ){
-            ?><tr>
-                <td>Mele:</td>
-                <td><?php echo $mele; ?></td>
-                <td><?php echo $mele * 0.90; ?>€</td>
-            </tr>
-            <?php
-        }
-        if($meloni != 0 ){
-            ?><tr>
-                <td>Meloni:</td>
-                <td><?php echo $meloni; ?></td>
-                <td><?php echo $meloni * 3.25; ?>€</td>
-            </tr>
-            <?php
-        }
-        if($arance != 0 ){
-            ?><tr>
-                <td>Arance:</td>
-                <td><?php echo $arance; ?></td>
-                <td><?php echo $arance * 1.25; ?>€</td>
-            </tr>
-            <?php
-
-        }
-        if($spaghetti != 0){
-            ?><tr>
-                <td>Spaghetti:</td>
-                <td><?php echo $spaghetti; ?></td>
-                <td><?php echo $spaghetti * 0.89; ?>€</td>
-            </tr>
-            <?php
-
-        }
-        if($pennette != 0 ){
-            ?><tr>
-                <td>Pennette:</td>
-                <td><?php echo $pennette; ?></td>
-                <td><?php echo $pennette * 0.89; ?>€</td>
-            </tr>
-            <?php
-
-        }
-        if($riso != 0){
-            ?><tr>
-                <td>Riso:</td>
-                <td><?php echo $riso; ?></td>
-                <td><?php echo $riso * 1.49; ?>€</td>
-            </tr>
-            <?php
-            
-        }
-        if($bistecca != 0 ){
-            ?><tr>
-                <td>Bistecca:</td>
-                <td><?php echo $bistecca; ?></td>
-                <td><?php echo $bistecca * 4; ?>€</td>
-            </tr>
-            <?php
-            
-        }
-        if($salsiccia != 0 ){
-            ?><tr>
-                <td>Salsiccia:</td>
-                <td><?php echo $salsiccia; ?></td>
-                <td><?php echo $salsiccia * 3.5; ?>€</td>
-            </tr>
-            <?php
-            
-        }
-        if($pollo != 0 ){
-            ?><tr>
-            <td>Pollo:</td>
-            <td><?php echo $pollo; ?></td>
-            <td><?php echo $pollo * 4.29; ?>€</td>
-        </tr>
+        echo "Meloni = $meloni &nbsp;";
+        $cmeloni= $meloni * 3.25;
+        $tott=$tott+$cmeloni;
+        echo "&nbsp;&nbsp;&nbsp;&nbsp;$cmeloni"; ?>€&nbsp;&nbsp;&nbsp;
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="melonipiu" ><i class="material-icons">add_circle_outline </i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="melonimeno" ><i class="material-icons">remove_circle_outline</i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="melonitogli" ><i class="material-icons"> highlight_off </i></button>
+    
+    <?php
+}
+if($arance != 0 )
+    {
+        ?><li class="collection-item"><div>
         <?php
-            
-        }
-        if($salmone != 0){
-            ?><tr>
-                <td>Salmone:</td>
-                <td><?php echo $salmone; ?></td>
-                <td><?php echo $salmone * 7.99; ?>€</td>
-            </tr>
-            <?php
-            
-        }
-        if($tonno != 0){
-            ?><tr>
-                <td>Tonno:</td>
-                <td><?php echo $tonno; ?></td>
-                <td><?php echo $tonno * 6.50; ?>€</td>
-            </tr>
-            <?php
-            
-        }
-        if($polpo != 0){
-            ?><tr>
-                <td>Polpo:</td>
-                <td><?php echo $polpo; ?></td>
-                <td><?php echo $polpo * 11.49; ?>€</td>
-            </tr>
-            <?php
-        }
+        echo "Arancia = $arance &nbsp;";
+        $carance= $arance * 1.25;
+        $tott=$tott+$carance;
+        echo "&nbsp;&nbsp;&nbsp;&nbsp;$carance"; ?>€&nbsp;&nbsp;&nbsp;
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="arancepiu" ><i class="material-icons">add_circle_outline </i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="arancemeno" ><i class="material-icons">remove_circle_outline</i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="arancetogli" ><i class="material-icons"> highlight_off </i></button>
+    
+    <?php
+    
+}
+if($spaghetti != 0 )
+    {
+        ?><li class="collection-item"><div>
+        <?php
+        echo "Spaghetti = $spaghetti &nbsp;";
+        $cspaghetti= $spaghetti * 0.89;
+        $tott=$tott+$cspaghetti;
+        echo "&nbsp;&nbsp;&nbsp;&nbsp;$cspaghetti"; ?>€&nbsp;&nbsp;&nbsp;
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="spaghettipiu" ><i class="material-icons">add_circle_outline </i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="spaghettimeno" ><i class="material-icons">remove_circle_outline</i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="spaghettitogli" ><i class="material-icons"> highlight_off </i></button>
+    
+    <?php
+    
+}
+if($pennette!= 0 )
+    {
+        ?><li class="collection-item"><div>
+        <?php
+        echo "Pennette = $pennette &nbsp;";
+        $cpennette= $pennette * 0.89;
+        $tott=$tott+$cpennette;
+        echo "&nbsp;&nbsp;&nbsp;&nbsp;$cpennette"; ?>€&nbsp;&nbsp;&nbsp;
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="pennettepiu" ><i class="material-icons">add_circle_outline </i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="pennettemeno" ><i class="material-icons">remove_circle_outline</i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="pennettetogli" ><i class="material-icons"> highlight_off </i></button>
+    
+    <?php
+    
+}
+if($riso != 0 )
+    {
+        ?><li class="collection-item"><div>
+        <?php
+        echo "Riso = $riso &nbsp;";
+        $criso= $riso * 1.49;
+        $tott=$tott+$criso;
+        echo "&nbsp;&nbsp;&nbsp;&nbsp;$criso"; ?>€&nbsp;&nbsp;&nbsp;
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="risopiu" ><i class="material-icons">add_circle_outline </i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="risomeno" ><i class="material-icons">remove_circle_outline</i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="risotogli" ><i class="material-icons"> highlight_off </i></button>
+    
+    <?php
+    
+}
+if($bistecca != 0 )
+    {
+        ?><li class="collection-item"><div>
+        <?php
+        echo "Bistecca = $bistecca &nbsp;";
+        $cbistecca= $bistecca * 4;
+        $tott=$tott+$cbistecca;
+        echo "&nbsp;&nbsp;&nbsp;&nbsp;$cbistecca"; ?>€&nbsp;&nbsp;&nbsp;
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="bisteccapiu" ><i class="material-icons">add_circle_outline </i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="bisteccameno" ><i class="material-icons">remove_circle_outline</i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="bisteccatogli" ><i class="material-icons"> highlight_off </i></button>
+    
+    <?php
+    
+}
+if($salsiccia != 0 )
+    {
+        ?><li class="collection-item"><div>
+        <?php
+        echo "Salsiccia = $salsiccia &nbsp;";
+        $csalsiccia= $salsiccia * 3.50;
+        $tott=$tott+$csalsiccia;
+        echo "&nbsp;&nbsp;&nbsp;&nbsp;$csalsiccia"; ?>€&nbsp;&nbsp;&nbsp;
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="salsicciapiu" ><i class="material-icons">add_circle_outline </i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="salsicciameno" ><i class="material-icons">remove_circle_outline</i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="salsicciatogli" ><i class="material-icons"> highlight_off </i></button>
+    
+    <?php
+    
+}
+if($pollo != 0 )
+    {
+        ?><li class="collection-item"><div>
+        <?php
+        echo "Pollo = $pollo &nbsp;";
+        $cpollo= $pollo * 4.29;
+        $tott=$tott+$cpollo;
+        echo "&nbsp;&nbsp;&nbsp;&nbsp;$cpollo"; ?>€&nbsp;&nbsp;&nbsp;
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="pollopiu" ><i class="material-icons">add_circle_outline </i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="pollomeno" ><i class="material-icons">remove_circle_outline</i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="pollotogli" ><i class="material-icons"> highlight_off </i></button>
+    
+    <?php
+    
+}
+if($salmone != 0 )
+    {
+        ?><li class="collection-item"><div>
+        <?php
+        echo "Salmone = $salmone &nbsp;";
+        $csalmone= $salmone * 7.99;
+        $tott=$tott+$csalmone;
+        echo "&nbsp;&nbsp;&nbsp;&nbsp;$csalmone"; ?>€&nbsp;&nbsp;&nbsp;
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="salmonepiu" ><i class="material-icons">add_circle_outline </i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="salmonemeno" ><i class="material-icons">remove_circle_outline</i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="salmonetogli" ><i class="material-icons"> highlight_off </i></button>
+    
+    <?php
+    
+}
+if($tonno != 0 )
+    {
+        ?><li class="collection-item"><div>
+        <?php
+        echo "Tonno = $tonno &nbsp;";
+        $ctonno= $tonno * 6.50;
+        $tott=$tott+$ctonno;
+        echo "&nbsp;&nbsp;&nbsp;&nbsp;$ctonno"; ?>€&nbsp;&nbsp;&nbsp;
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="tonnopiu" ><i class="material-icons">add_circle_outline </i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="tonnomeno" ><i class="material-icons">remove_circle_outline</i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="tonnotogli" ><i class="material-icons"> highlight_off </i></button>
+    
+    <?php
+    
+}
+if($polpo != 0 )
+    {
+        ?><li class="collection-item"><div>
+        <?php
+        echo "Polpo = $polpo &nbsp;";
+        $cpolpo= $polpo * 11.49;
+        $tott=$tott+$cpolpo;
+        echo "&nbsp;&nbsp;&nbsp;&nbsp;$cpolpo"; ?>€&nbsp;&nbsp;&nbsp;
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="polpopiu" ><i class="material-icons">add_circle_outline </i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="polpomeno" ><i class="material-icons">remove_circle_outline</i></button>
+        <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="polpotogli" ><i class="material-icons"> highlight_off </i></button>
+    
+    <?php
+    
+}
+
+
+?></form></ul><?php
+    $melepiu = isset($_POST['melepiu']) ? true: false;
+    $melemeno = isset($_POST['melemeno']) ? true: false;
+    $meletogli = isset($_POST['meletogli']) ? true: false;
+    $melonipiu = isset($_POST['melonipiu']) ? true: false;
+    $melonimeno = isset($_POST['melonimeno']) ? true: false;
+    $melonitogli = isset($_POST['melonitogli']) ? true: false;
+    $arancepiu = isset($_POST['arancepiu']) ? true: false;
+    $arancemeno = isset($_POST['arancemeno']) ? true: false;
+    $arancetogli = isset($_POST['arancetogli']) ? true: false;
+    $spaghettipiu = isset($_POST['spaghettipiu']) ? true: false;
+    $spaghettimeno = isset($_POST['spaghettimeno']) ? true: false;
+    $spaghettitogli = isset($_POST['spaghettitogli']) ? true: false;
+    $pennettepiu = isset($_POST['pennettepiu']) ? true: false;
+    $pennettemeno = isset($_POST['pennettemeno']) ? true: false;
+    $pennettetogli = isset($_POST['pennettetogli']) ? true: false;
+    $risopiu = isset($_POST['risopiu']) ? true: false;
+    $risomeno = isset($_POST['risomeno']) ? true: false;
+    $risotogli = isset($_POST['risotogli']) ? true: false;
+    $bisteccapiu = isset($_POST['bisteccapiu']) ? true: false;
+    $bisteccameno = isset($_POST['bisteccameno']) ? true: false;
+    $bisteccatogli = isset($_POST['bisteccatogli']) ? true: false;
+    $salsicciapiu = isset($_POST['salsicciapiu']) ? true: false;
+    $salsicciameno = isset($_POST['salsicciameno']) ? true: false;
+    $salsicciatogli = isset($_POST['salsicciatogli']) ? true: false;
+    $pollopiu = isset($_POST['pollopiu']) ? true: false;
+    $pollomeno = isset($_POST['pollomeno']) ? true: false;
+    $pollotogli = isset($_POST['pollotogli']) ? true: false;
+    $salmonepiu = isset($_POST['salmonepiu']) ? true: false;
+    $salmonemeno = isset($_POST['salmonemeno']) ? true: false;
+    $salmonetogli = isset($_POST['salmonetogli']) ? true: false;
+    $tonnopiu = isset($_POST['tonnopiu']) ? true: false;
+    $tonnomeno = isset($_POST['tonnomeno']) ? true: false;
+    $tonnotogli = isset($_POST['tonnotogli']) ? true: false;
+    $polpopiu = isset($_POST['polpopiu']) ? true: false;
+    $polpomeno = isset($_POST['polpomeno']) ? true: false;
+    $polpotogli = isset($_POST['polpotogli']) ? true: false;
+
+    if($melepiu==true){$mele = $mele+1;}
+    if($melemeno==true){$mele = $mele-1;}
+    if($meletogli==true){$mele = 0;}
+    if($melonipiu==true){$meloni = $meloni+1;}
+    if($melonimeno==true){$meloni = $meloni-1;}
+    if($melonitogli==true){$meloni = 0;}
+    if($arancepiu==true){$arance = $arance+1;}
+    if($arancemeno==true){$arance = $arance-1;}
+    if($arancetogli==true){$arance = 0;}
+    if($spaghettipiu==true){$spaghetti = $spaghetti+1;}
+    if($spaghettimeno==true){$spaghetti = $spaghetti-1;}
+    if($spaghettitogli==true){$spaghetti = 0;}
+    if($pennettepiu==true){$pennette = $pennette+1;}
+    if($pennettemeno==true){$pennette = $pennette-1;}
+    if($pennettetogli==true){$pennette = 0;}
+    if($risopiu==true){$riso = $riso+1;}
+    if($risomeno==true){$riso = $riso-1;}
+    if($risotogli==true){$riso = 0;}
+    if($bisteccapiu==true){$bistecca = $bistecca+1;}
+    if($bistecca==true){$bistecca = $bistecca-1;}
+    if($bistecca==true){$bistecca = 0;}
+    if($salsicciapiu==true){$salsiccia = $salsiccia+1;}
+    if($salsicciameno==true){$salsiccia = $salsiccia-1;}
+    if($salsicciatogli==true){$salsiccia = 0;}
+    if($pollopiu==true){$pollo = $pollo+1;}
+    if($pollomeno==true){$pollo = $pollo-1;}
+    if($pollotogli==true){$pollo = 0;}
+    if($salmonepiu==true){$salmone = $salmone+1;}
+    if($salmonemeno==true){$salmone = $salmone-1;}
+    if($salmonetogli==true){$salmone = 0;}
+    if($tonnopiu==true){$tonno = $tonno+1;}
+    if($tonnomeno==true){$tonno = $tonno-1;}
+    if($tonnotogli==true){$tonno = 0;}
+    if($polpopiu==true){$polpo = $polpo+1;}
+    if($polpomeno==true){$polpo = $polpo-1;}
+    if($polpotogli==true){$polpo = 0;}
+    
+
+    $p = fopen($file,"w");
+    $str = "$mele;$meloni;$arance;$spaghetti;$pennette;$riso;$bistecca;$salsiccia;$pollo;$salmone;$tonno;$polpo;";
+    fwrite($p,$str);
+    fclose($p);
+    
+
+    return $tott;
 
 }
 
@@ -258,7 +410,15 @@ function get_utente($m)
 
 }
 
-
+function azzera_spesa($m)
+{
+    $nome_file= $m . ".txt";
+    $file="./file-spesa/" ."$nome_file";
+    $azzera="0;0;0;0;0;0;0;0;0;0;0;0;";
+    $p = fopen($file,"w");
+    fwrite($p,$azzera);
+    fclose($p);
+}
 
 ?>
 

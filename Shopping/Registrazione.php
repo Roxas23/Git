@@ -42,7 +42,7 @@ session_start();
       </div>
   <div class="row">
     <div class="input-field col s5">
-      <input type="password" name="password" id="password" placeholder="password">
+      <input type="password" name="password" id="password" placeholder="password" minlength="8" required>
         <p>
           <label>
             <input type="checkbox" onclick="pass_visibility()"/>

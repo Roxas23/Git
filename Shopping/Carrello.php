@@ -18,8 +18,8 @@ session_start();
 <style type="text/css">
 input {
 position:fixed;
-top: 600px;
-left: 930px;
+top: 650px;
+left: 1100px;
 }
 </style>
 
@@ -32,28 +32,77 @@ left: 930px;
       </ul>
     </div>
 </nav>
-<div class="row">
-    <form action="" method="post" class="col s12">
-        <div class="input-field col s6">
-            <input type="submit" value="Acquista" class="btn" name="sub">
-        </div>
-    </form>
-</div>
+
+
 <?php include 'Funzioni.php';
 error_reporting (E_ALL ^ E_NOTICE);
+
+$submit = isset($_POST['sub']) ? true : false;
 
     $i=$_SESSION['identiti'];
     if($i==0)
     {
         $m=$_SESSION['reg_email'];
-        get_spesa($m);
+        $tott=get_spesa($m);
+       
+        ?><ul class="collection with-header">
+        <form action="" method="post" class="col s12">
+        <li class="collection-header"><h4>Scontrino</h4></li>
+        <li class="collection-item"><div>
+            <?php
+            echo "Totale = $tott &nbsp;";?>€&nbsp;&nbsp;&nbsp;
+            <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="scontrino" ><i class="material-icons"> euro </i></button>
+        <?php
+        $scontrino = isset($_POST['scontrino']) ? true: false;
+        if($scontrino==true)
+        {
+            $to = $m;
+            $subject = 'the subject';
+            $message = "il tuo scontrino è $tott";
+            $headers = 'From: rosariomanuele2318@gmail.com'. "\r\n" .
+            'Reply-To: '.$m . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+            mail($to, $subject, $message, $headers);
+            
+            azzera_spesa($m); 
+            
+            header("location: home.php");
+            
+        }
     }
+
     else if($i==1)
     {
         $m=$_SESSION['log_email'];
-        get_spesa($m);
+        $tott=get_spesa($m);
+        ?><ul class="collection with-header">
+        <form action="" method="post" class="col s12">
+        <li class="collection-header"><h4>Scontrino</h4></li>
+        <li class="collection-item"><div>
+            <?php
+            echo "Totale = $tott &nbsp;";?>€&nbsp;&nbsp;&nbsp;
+            <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="scontrino" ><i class="material-icons"> euro</i></button>
+            <?php
+
+        $scontrino = isset($_POST['scontrino']) ? true: false;
+        if($scontrino==true)
+        {
+            $to = $m;
+            $subject = 'the subject';
+            $message = "il tuo scontrino è $tott";
+            $headers = 'From: rosariomanuele2318@gmail.com'. "\r\n" .
+            'Reply-To: '.$m . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+            mail($to, $subject, $message, $headers);
+            
+            azzera_spesa($m); 
+            
+            header("location: home.php");
+            
+        }
     }
 
+    
 
 
 ?>
