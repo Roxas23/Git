@@ -47,7 +47,7 @@ $submit = isset($_POST['sub']) ? true : false;
        
         ?><ul class="collection with-header">
         <form action="" method="post" class="col s12">
-        <li class="collection-header"><h4>Scontrino</h4></li>
+        <li class="collection-header"><h5>Scontrino</h5></li>
         <li class="collection-item"><div>
             <?php
             echo "Totale = $tott &nbsp;";?>€&nbsp;&nbsp;&nbsp;

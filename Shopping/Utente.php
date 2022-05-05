@@ -39,9 +39,6 @@ error_reporting (E_ALL ^ E_NOTICE);
         $m=$_SESSION['log_email'];
         get_utente($m);
     }
-
-
-
 ?>
 
 

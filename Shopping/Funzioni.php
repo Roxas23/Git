@@ -9,7 +9,11 @@ table {
     width: 800px;
 }
 
-
+ul.collection.with-header {
+    margin-left: 420px;
+    margin-right: 450px;
+    margin-bottom: 50px;
+}
 </style>
 <?php 
 error_reporting (E_ALL ^ E_NOTICE);
@@ -108,7 +112,7 @@ function get_spesa($m)
     list($mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo) = explode(";",$row);
     ?><ul class="collection with-header">
         <form action="" method="post" class="col s12">
-        <li class="collection-header"><h4>Carrello</h4></li><?php
+        <li class="collection-header"><h5>Carrello</h5></li><?php
     if($mele != 0 )
     {
     ?>
@@ -118,11 +122,10 @@ function get_spesa($m)
             $cmele =   $mele * 0.90;
             $tott=$tott+$cmele;
             echo "&nbsp;&nbsp;&nbsp;&nbsp;$cmele"; ?>€&nbsp;&nbsp;&nbsp;
-    
             <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="melepiu" ><i class="material-icons">add_circle_outline </i></button>
             <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="melemeno" ><i class="material-icons">remove_circle_outline</i></button>
             <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="meletogli" ><i class="material-icons"> highlight_off </i></button>
-    <?php
+    </div></li><?php
     }
     if($meloni != 0 )
     {
@@ -136,7 +139,7 @@ function get_spesa($m)
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="melonimeno" ><i class="material-icons">remove_circle_outline</i></button>
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="melonitogli" ><i class="material-icons"> highlight_off </i></button>
     
-    <?php
+        </div></li><?php
 }
 if($arance != 0 )
     {
@@ -150,7 +153,7 @@ if($arance != 0 )
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="arancemeno" ><i class="material-icons">remove_circle_outline</i></button>
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="arancetogli" ><i class="material-icons"> highlight_off </i></button>
     
-    <?php
+        </div></li><?php
     
 }
 if($spaghetti != 0 )
@@ -165,7 +168,7 @@ if($spaghetti != 0 )
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="spaghettimeno" ><i class="material-icons">remove_circle_outline</i></button>
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="spaghettitogli" ><i class="material-icons"> highlight_off </i></button>
     
-    <?php
+        </div></li><?php
     
 }
 if($pennette!= 0 )
@@ -180,7 +183,7 @@ if($pennette!= 0 )
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="pennettemeno" ><i class="material-icons">remove_circle_outline</i></button>
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="pennettetogli" ><i class="material-icons"> highlight_off </i></button>
     
-    <?php
+        </div></li><?php
     
 }
 if($riso != 0 )
@@ -195,7 +198,7 @@ if($riso != 0 )
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="risomeno" ><i class="material-icons">remove_circle_outline</i></button>
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="risotogli" ><i class="material-icons"> highlight_off </i></button>
     
-    <?php
+        </div></li><?php
     
 }
 if($bistecca != 0 )
@@ -210,7 +213,7 @@ if($bistecca != 0 )
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="bisteccameno" ><i class="material-icons">remove_circle_outline</i></button>
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="bisteccatogli" ><i class="material-icons"> highlight_off </i></button>
     
-    <?php
+        </div></li><?php
     
 }
 if($salsiccia != 0 )
@@ -225,7 +228,7 @@ if($salsiccia != 0 )
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="salsicciameno" ><i class="material-icons">remove_circle_outline</i></button>
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="salsicciatogli" ><i class="material-icons"> highlight_off </i></button>
     
-    <?php
+        </div></li><?php
     
 }
 if($pollo != 0 )
@@ -240,7 +243,7 @@ if($pollo != 0 )
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="pollomeno" ><i class="material-icons">remove_circle_outline</i></button>
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="pollotogli" ><i class="material-icons"> highlight_off </i></button>
     
-    <?php
+        </div></li><?php
     
 }
 if($salmone != 0 )
@@ -255,7 +258,7 @@ if($salmone != 0 )
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="salmonemeno" ><i class="material-icons">remove_circle_outline</i></button>
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="salmonetogli" ><i class="material-icons"> highlight_off </i></button>
     
-    <?php
+        </div><?php
     
 }
 if($tonno != 0 )
@@ -270,7 +273,7 @@ if($tonno != 0 )
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="tonnomeno" ><i class="material-icons">remove_circle_outline</i></button>
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="tonnotogli" ><i class="material-icons"> highlight_off </i></button>
     
-    <?php
+        </div></li><?php
     
 }
 if($polpo != 0 )
@@ -284,8 +287,8 @@ if($polpo != 0 )
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="polpopiu" ><i class="material-icons">add_circle_outline </i></button>
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="polpomeno" ><i class="material-icons">remove_circle_outline</i></button>
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="polpotogli" ><i class="material-icons"> highlight_off </i></button>
-    
-    <?php
+        
+        </div></li><?php
     
 }
 
@@ -329,40 +332,51 @@ if($polpo != 0 )
     $polpotogli = isset($_POST['polpotogli']) ? true: false;
 
     if($melepiu==true){$mele = $mele+1;}
-    if($melemeno==true){$mele = $mele-1;}
+    if($melemeno==true && $mele>0){$mele = $mele-1;}
     if($meletogli==true){$mele = 0;}
+
     if($melonipiu==true){$meloni = $meloni+1;}
-    if($melonimeno==true){$meloni = $meloni-1;}
-    if($melonitogli==true){$meloni = 0;}
+    if($melonimeno==true && $meloni>0){$meloni = $meloni-1;}
+    if($melonitogli==true ){$meloni = 0;}
+
     if($arancepiu==true){$arance = $arance+1;}
-    if($arancemeno==true){$arance = $arance-1;}
-    if($arancetogli==true){$arance = 0;}
+    if($arancemeno==true && $arance>0){$arance = $arance-1;}
+    if($arancetogli==true ){$arance = 0;}
+
     if($spaghettipiu==true){$spaghetti = $spaghetti+1;}
-    if($spaghettimeno==true){$spaghetti = $spaghetti-1;}
+    if($spaghettimeno==true && $spaghetti>0){$spaghetti = $spaghetti-1;}
     if($spaghettitogli==true){$spaghetti = 0;}
+
     if($pennettepiu==true){$pennette = $pennette+1;}
-    if($pennettemeno==true){$pennette = $pennette-1;}
+    if($pennettemeno==true && $pennette>0){$pennette = $pennette-1;}
     if($pennettetogli==true){$pennette = 0;}
+
     if($risopiu==true){$riso = $riso+1;}
-    if($risomeno==true){$riso = $riso-1;}
+    if($risomeno==true && $riso>0){$riso = $riso-1;}
     if($risotogli==true){$riso = 0;}
+
     if($bisteccapiu==true){$bistecca = $bistecca+1;}
-    if($bistecca==true){$bistecca = $bistecca-1;}
+    if($bistecca==true && $bistecca>0){$bistecca = $bistecca-1;}
     if($bistecca==true){$bistecca = 0;}
+
     if($salsicciapiu==true){$salsiccia = $salsiccia+1;}
-    if($salsicciameno==true){$salsiccia = $salsiccia-1;}
+    if($salsicciameno==true && $salsiccia>0){$salsiccia = $salsiccia-1;}
     if($salsicciatogli==true){$salsiccia = 0;}
+
     if($pollopiu==true){$pollo = $pollo+1;}
-    if($pollomeno==true){$pollo = $pollo-1;}
+    if($pollomeno==true && $pollo>0){$pollo = $pollo-1;}
     if($pollotogli==true){$pollo = 0;}
+
     if($salmonepiu==true){$salmone = $salmone+1;}
-    if($salmonemeno==true){$salmone = $salmone-1;}
+    if($salmonemeno==true && $salmone>0){$salmone = $salmone-1;}
     if($salmonetogli==true){$salmone = 0;}
+
     if($tonnopiu==true){$tonno = $tonno+1;}
-    if($tonnomeno==true){$tonno = $tonno-1;}
+    if($tonnomeno==true && $tonno>0){$tonno = $tonno-1;}
     if($tonnotogli==true){$tonno = 0;}
+
     if($polpopiu==true){$polpo = $polpo+1;}
-    if($polpomeno==true){$polpo = $polpo-1;}
+    if($polpomeno==true && $polpo>0){$polpo = $polpo-1;}
     if($polpotogli==true){$polpo = 0;}
     
 
@@ -385,29 +399,41 @@ function get_utente($m)
         list($nome,$cognome,$eml,$pass) = explode(";",$arr);
         if($eml == $m)
         {
-            ?><table class="highlight">
-                <thead>
-                <tr>
-                    <th>Area Personale</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Nome: <?php echo $nome; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Cognome: <?php echo $cognome; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Email: <?php echo $eml; ?></td>
-                    </tr>
-                </tbody>
-            </table>
-            <?php
+            ?><ul class="collection with-header">
+            <form action="" method="post" class="col s12">
+            <li class="collection-header"><h5>Area personale</h5></li><?php
+            ?><li class="collection-item"><div>
+                <?php
+                echo "Nome: &nbsp;$nome";?>&nbsp;&nbsp;&nbsp;
+                <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="Modificanome" ><i class="material-icons">edit </i></button></div></li>
+                <li class="collection-item"><div>
+                <?php
+                echo "Cognome: &nbsp;$cognome";?>&nbsp;&nbsp;&nbsp;
+                <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="Modificacognome" ><i class="material-icons">edit </i></button></div></li>
+                <li class="collection-item"><div>
+                <?php
+                echo "E-mail: &nbsp;$eml";?></div></li>
+                <li class="collection-item"><div>
+                <?php
+                $s=star_out_password($pass,4);
+                echo "Password: &nbsp;$s"  ;?>&nbsp;&nbsp;&nbsp;
+                <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="Modificapassword" ><i class="material-icons"> edit</i></button></div></li>
+              </table></form></ul><?php
         } 
     }
     fclose($p);
 
+
+}
+
+function star_out_password($password,$number_show)
+{
+	$star = '';
+	if(is_numeric($number_show) && $number_show < strlen($password))
+    {
+	    $star = str_repeat('*',(strlen($password) - $number_show)) . substr($password,-$number_show,$number_show);
+	}
+	return $star;
 }
 
 function azzera_spesa($m)
@@ -421,4 +447,3 @@ function azzera_spesa($m)
 }
 
 ?>
-
