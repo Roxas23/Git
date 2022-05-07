@@ -423,6 +423,13 @@ function get_utente($m)
     }
     fclose($p);
 
+    $Modificanome = isset($_POST['Modificanome']) ? true: false;
+    $Modificacognome = isset($_POST['Modificacognome']) ? true: false;
+    $Modificapassword = isset($_POST['Modificapassword']) ? true: false;
+
+    if($Modificanome==true){cambia_nome($m);}
+    if($Modificacognome==true){cambia_cognome($m);}
+    if($Modificapassword==true){cambia_password($m);}
 
 }
 
@@ -435,6 +442,167 @@ function star_out_password($password,$number_show)
 	}
 	return $star;
 }
+
+function cambia_nome($m)
+{
+    echo "Cambiare Nome";
+    ?>
+    <div class="row">
+    <form action="" method="post" class="col s12">
+      <div class="row">
+        <div class="input-field col s5">
+          <input type="text" name="cambianome" id="nome" placeholder="nome">
+        </div>
+      </div>
+   </div>
+    <div class="input-field col s6">
+      <input type="submit" value="cambia" class="btn" name="cambia">
+    </div>  </form>
+<?php
+    $cambia = isset($_POST['cambia']) ? true : false;
+    $vet=array();
+    $i=0;
+   
+    if($cambia)
+    {
+        $cam = $_REQUEST['cambianome'];
+        $p = fopen("dati.txt", "r");
+       while(!feof($p))
+        {
+            $arr=fgets($p);
+            $vet[$i]=$arr;
+            $i++;
+        }
+        fclose($p);
+        for($j=0;$j<$i;$j++)
+        {
+            $var=$vet[$j];
+            list($nom,$cogn,$eml,$pass) = explode(";",$var);
+            if($m==$eml)
+            {
+                $nom=$cam;
+                $str = "$nom;$cogn;$eml;$pass;\n";
+                $vet[$j]=$str;
+            }
+        }
+
+        $p = fopen("dati.txt", "w");
+        for($j=0;$j<$i;$j++)
+        {
+            $c=$vet[$j];
+            echo $c;
+            fwrite($p,$c);
+        }
+        fclose($p);
+   }
+    
+}
+
+function cambia_cognome($m)
+{
+    echo "Cambiare Cognome";
+    ?>
+    <div class="row">
+    <form action="" method="post" class="col s12">
+      <div class="row">
+        <div class="input-field col s5">
+          <input type="text" name="cambiacognome" id="nome" placeholder="cognome">
+        </div>
+      </div>
+   </div>
+    <div class="input-field col s6">
+      <input type="submit" value="cambia" class="btn" name="cambia">
+    </div>  </form>
+<?php
+   $cambia = isset($_POST['cambia']) ? true : false;
+   $vet=array();
+   $i=0;
+   if($cambia==true){
+    $cam = $_REQUEST['cambiacognome'];
+
+    $p = fopen("dati.txt", "r");
+    while(!feof($p))
+    {
+        $arr=fgets($p);
+        $vet[$i]=$arr;
+        $i++;
+    }
+    fclose($p);
+
+    for($j=0;$j<$i;$j++)
+    {
+        $var=$vet[$j];
+        list($nom,$cogn,$eml,$pass) = explode(";",$var);
+        if($m==$eml)
+        {
+            $cogn=$cam;
+            $str = "$nom;$cogn;$eml;$pass;\n";
+            $vet[$j]=$str;
+        }
+    }
+    $p = fopen("dati.txt", "w");
+    for($j=0;$j<$i;$j++)
+    {
+        $c=$vet[$j];
+        fwrite($p,$c);
+    }
+    fclose($p);
+    }
+}
+
+function cambia_password($m)
+{
+    echo "Cambiare Password";
+    ?>
+    <div class="row">
+    <form action="" method="post" class="col s12">
+      <div class="row">
+        <div class="input-field col s5">
+          <input type="text" name="cambianome" id="nome" placeholder="password">
+        </div>
+      </div>
+   </div>
+    <div class="input-field col s6">
+      <input type="submit" value="cambia" class="btn" name="cambia">
+    </div>  </form>
+<?php
+   $cambia = isset($_POST['cambia']) ? true : false;
+   $vet=array();
+   $i=0;
+   if($cambia==true){
+    $cam = $_REQUEST['cambiapassword'];
+
+    $p = fopen("dati.txt", "r");
+    while(!feof($p))
+    {
+        $arr=fgets($p);
+        $vet[$i]=$arr;
+        $i++;
+    }
+    fclose($p);
+    
+    for($j=0;$j<$i;$j++)
+    {
+        $var=$vet[$j];
+        list($nom,$cogn,$eml,$pass) = explode(";",$var);
+        if($m==$eml)
+        {
+            $pass=$cam;
+            $str = "$nom;$cogn;$eml;$pass;\n";
+            $vet[$j]=$str;
+        }
+    }
+    $p = fopen("dati.txt", "w");
+    for($j=0;$j<$i;$j++)
+    {
+        $c=$vet[$j];
+        fwrite($p,$c);
+    }
+    fclose($p);
+    }
+}
+
+
 
 function azzera_spesa($m)
 {

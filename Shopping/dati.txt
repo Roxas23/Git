@@ -1,2 +1,5 @@
 Manuele;Rosario;rosariomanuele@gmail.com;pippo0909;
 Rosario;Manuele;rox@gmail.com;Pippo090.;
+Charu;Fernando;charu@gmail.com;micino09;
+Pippo;Pluto;pippo@gmail.com;pippo0909;
+pulito;minni;topolino192@gmail.com;topolino192;
