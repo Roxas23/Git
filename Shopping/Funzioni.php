@@ -427,7 +427,13 @@ function get_utente($m)
     $Modificacognome = isset($_POST['Modificacognome']) ? true: false;
     $Modificapassword = isset($_POST['Modificapassword']) ? true: false;
 
-    if($Modificanome==true){cambia_nome($m);}
+
+    //vedi se tolgo l'if funziona, ma eliminando l'if il form rimane sempre evidente ma io non lo voglio evidente 
+    //e non mi va bene sta cosa, ce non capisco 
+    cambia_nome($m);
+    //if($Modificanome==true){cambia_nome($m);}
+
+
     if($Modificacognome==true){cambia_cognome($m);}
     if($Modificapassword==true){cambia_password($m);}
 
@@ -490,7 +496,6 @@ function cambia_nome($m)
         for($j=0;$j<$i;$j++)
         {
             $c=$vet[$j];
-            echo $c;
             fwrite($p,$c);
         }
         fclose($p);
