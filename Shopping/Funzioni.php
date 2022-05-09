@@ -289,8 +289,7 @@ if($polpo != 0 )
         <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="polpotogli" ><i class="material-icons"> highlight_off </i></button>
         
         </div></li><?php
-    
-}
+    }
 
 
 ?></form></ul><?php
@@ -384,8 +383,7 @@ if($polpo != 0 )
     $str = "$mele;$meloni;$arance;$spaghetti;$pennette;$riso;$bistecca;$salsiccia;$pollo;$salmone;$tonno;$polpo;";
     fwrite($p,$str);
     fclose($p);
-    
-
+   
     return $tott;
 
 }
@@ -405,11 +403,11 @@ function get_utente($m)
             ?><li class="collection-item"><div>
                 <?php
                 echo "Nome: &nbsp;$nome";?>&nbsp;&nbsp;&nbsp;
-                <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="Modificanome" ><i class="material-icons">edit </i></button></div></li>
+                <button type="submit" value="Modificanome" class="btn btn-primary btn-xs" name="Modificanome" ><i class="material-icons">edit </i></button></div></li>
                 <li class="collection-item"><div>
                 <?php
                 echo "Cognome: &nbsp;$cognome";?>&nbsp;&nbsp;&nbsp;
-                <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="Modificacognome" ><i class="material-icons">edit </i></button></div></li>
+                <button type="submit" value="Modificacognome" class="btn btn-primary btn-xs" name="Modificacognome" ><i class="material-icons">edit </i></button></div></li>
                 <li class="collection-item"><div>
                 <?php
                 echo "E-mail: &nbsp;$eml";?></div></li>
@@ -417,26 +415,20 @@ function get_utente($m)
                 <?php
                 $s=star_out_password($pass,4);
                 echo "Password: &nbsp;$s"  ;?>&nbsp;&nbsp;&nbsp;
-                <button type="submit" value="Aggiungi" class="btn btn-primary btn-xs" name="Modificapassword" ><i class="material-icons"> edit</i></button></div></li>
+                <button type="submit" value="Modificapassword" class="btn btn-primary btn-xs" name="Modificapassword" ><i class="material-icons"> edit</i></button></div></li>
               </table></form></ul><?php
         } 
     }
     fclose($p);
 
-    $Modificanome = isset($_POST['Modificanome']) ? true: false;
+    $Modificanome = isset($_POST ['Modificanome']) ? true: false;
     $Modificacognome = isset($_POST['Modificacognome']) ? true: false;
     $Modificapassword = isset($_POST['Modificapassword']) ? true: false;
-
-
-    //vedi se tolgo l'if funziona, ma eliminando l'if il form rimane sempre evidente ma io non lo voglio evidente 
-    //e non mi va bene sta cosa, ce non capisco 
-    cambia_nome($m);
-    //if($Modificanome==true){cambia_nome($m);}
-
-
+    
+    if($Modificanome==true){cambia_nome($m);}
     if($Modificacognome==true){cambia_cognome($m);}
     if($Modificapassword==true){cambia_password($m);}
-
+    
 }
 
 function star_out_password($password,$number_show)
@@ -500,7 +492,6 @@ function cambia_nome($m)
         }
         fclose($p);
    }
-    
 }
 
 function cambia_cognome($m)

@@ -69,12 +69,14 @@ $submit = isset($_POST['sub']) ? true : false;
             header("location: home.php");
             
         }
+        
     }
 
     else if($i==1)
     {
         $m=$_SESSION['log_email'];
         $tott=get_spesa($m);
+        
         ?><ul class="collection with-header">
         <form action="" method="post" class="col s12">
         <li class="collection-header"><h4>Scontrino</h4></li>
