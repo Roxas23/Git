@@ -74,7 +74,7 @@ function set_spesa($nome_file,$mele,$meloni,$arance,$spaghetti,$pennette,$riso,$
     $p = fopen($file,"r");
     $row = fgets($p);
     fclose($p);
-
+    
     list($mel,$melo,$arac,$spag,$pen,$ris,$bist,$sals,$pol,$salm,$tonn,$polp) = explode(";",$row);
 
     $p = fopen($file,"w");
@@ -110,6 +110,7 @@ function get_spesa($m)
     fclose($p);
 
     list($mele,$meloni,$arance,$spaghetti,$pennette,$riso,$bistecca,$salsiccia,$pollo,$salmone,$tonno,$polpo) = explode(";",$row);
+
     ?><ul class="collection with-header">
         <form action="" method="post" class="col s12">
         <li class="collection-header"><h5>Carrello</h5></li><?php
@@ -329,60 +330,68 @@ if($polpo != 0 )
     $polpopiu = isset($_POST['polpopiu']) ? true: false;
     $polpomeno = isset($_POST['polpomeno']) ? true: false;
     $polpotogli = isset($_POST['polpotogli']) ? true: false;
+    
+    $i=0;
 
-    if($melepiu==true){$mele = $mele+1;}
-    if($melemeno==true && $mele>0){$mele = $mele-1;}
-    if($meletogli==true){$mele = 0;}
+    if($melepiu==true){$mele = $mele+1;$i++;}
+    if($melemeno==true && $mele>0){$mele = $mele-1;$i++;}
+    if($meletogli==true){$mele = 0;$i++;}
 
-    if($melonipiu==true){$meloni = $meloni+1;}
-    if($melonimeno==true && $meloni>0){$meloni = $meloni-1;}
-    if($melonitogli==true ){$meloni = 0;}
+    if($melonipiu==true){$meloni = $meloni+1;$i++;}
+    if($melonimeno==true && $meloni>0){$meloni = $meloni-1;$i++;}
+    if($melonitogli==true ){$meloni = 0;$i++;}
 
-    if($arancepiu==true){$arance = $arance+1;}
-    if($arancemeno==true && $arance>0){$arance = $arance-1;}
-    if($arancetogli==true ){$arance = 0;}
+    if($arancepiu==true){$arance = $arance+1;$i++;}
+    if($arancemeno==true && $arance>0){$arance = $arance-1;$i++;}
+    if($arancetogli==true ){$arance = 0;$i++;}
 
-    if($spaghettipiu==true){$spaghetti = $spaghetti+1;}
-    if($spaghettimeno==true && $spaghetti>0){$spaghetti = $spaghetti-1;}
-    if($spaghettitogli==true){$spaghetti = 0;}
+    if($spaghettipiu==true){$spaghetti = $spaghetti+1;$i++;}
+    if($spaghettimeno==true && $spaghetti>0){$spaghetti = $spaghetti-1;$i++;}
+    if($spaghettitogli==true){$spaghetti = 0;$i++;}
 
-    if($pennettepiu==true){$pennette = $pennette+1;}
-    if($pennettemeno==true && $pennette>0){$pennette = $pennette-1;}
-    if($pennettetogli==true){$pennette = 0;}
+    if($pennettepiu==true){$pennette = $pennette+1;$i++;}
+    if($pennettemeno==true && $pennette>0){$pennette = $pennette-1;$i++;}
+    if($pennettetogli==true){$pennette = 0;$i++;}
 
-    if($risopiu==true){$riso = $riso+1;}
-    if($risomeno==true && $riso>0){$riso = $riso-1;}
-    if($risotogli==true){$riso = 0;}
+    if($risopiu==true){$riso = $riso+1;$i++;}
+    if($risomeno==true && $riso>0){$riso = $riso-1;$i++;}
+    if($risotogli==true){$riso = 0;$i++;}
 
-    if($bisteccapiu==true){$bistecca = $bistecca+1;}
-    if($bistecca==true && $bistecca>0){$bistecca = $bistecca-1;}
-    if($bistecca==true){$bistecca = 0;}
+    if($bisteccapiu==true){$bistecca = $bistecca+1;$i++;}
+    if($bistecca==true && $bistecca>0){$bistecca = $bistecca-1;$i++;}
+    if($bistecca==true){$bistecca = 0;$i++;}
 
-    if($salsicciapiu==true){$salsiccia = $salsiccia+1;}
-    if($salsicciameno==true && $salsiccia>0){$salsiccia = $salsiccia-1;}
-    if($salsicciatogli==true){$salsiccia = 0;}
+    if($salsicciapiu==true){$salsiccia = $salsiccia+1;$i++;}
+    if($salsicciameno==true && $salsiccia>0){$salsiccia = $salsiccia-1;$i++;}
+    if($salsicciatogli==true){$salsiccia = 0;$i++;}
 
-    if($pollopiu==true){$pollo = $pollo+1;}
-    if($pollomeno==true && $pollo>0){$pollo = $pollo-1;}
-    if($pollotogli==true){$pollo = 0;}
+    if($pollopiu==true){$pollo = $pollo+1;$i++;}
+    if($pollomeno==true && $pollo>0){$pollo = $pollo-1;$i++;}
+    if($pollotogli==true){$pollo = 0;$i++;}
 
-    if($salmonepiu==true){$salmone = $salmone+1;}
-    if($salmonemeno==true && $salmone>0){$salmone = $salmone-1;}
-    if($salmonetogli==true){$salmone = 0;}
+    if($salmonepiu==true){$salmone = $salmone+1;$i++;}
+    if($salmonemeno==true && $salmone>0){$salmone = $salmone-1;$i++;}
+    if($salmonetogli==true){$salmone = 0;$i++;}
 
-    if($tonnopiu==true){$tonno = $tonno+1;}
-    if($tonnomeno==true && $tonno>0){$tonno = $tonno-1;}
-    if($tonnotogli==true){$tonno = 0;}
+    if($tonnopiu==true){$tonno = $tonno+1;$i++;}
+    if($tonnomeno==true && $tonno>0){$tonno = $tonno-1;$i++;}
+    if($tonnotogli==true){$tonno = 0;$i++;}
 
-    if($polpopiu==true){$polpo = $polpo+1;}
-    if($polpomeno==true && $polpo>0){$polpo = $polpo-1;}
-    if($polpotogli==true){$polpo = 0;}
+    if($polpopiu==true){$polpo = $polpo+1;$i++;}
+    if($polpomeno==true && $polpo>0){$polpo = $polpo-1;$i++;}
+    if($polpotogli==true){$polpo = 0;$i++;}
     
 
     $p = fopen($file,"w");
     $str = "$mele;$meloni;$arance;$spaghetti;$pennette;$riso;$bistecca;$salsiccia;$pollo;$salmone;$tonno;$polpo;";
     fwrite($p,$str);
     fclose($p);
+
+    if($i!=0)
+    {
+        echo "<script>window.location.reload();</script>";
+    }
+    $i=0;
    
     return $tott;
 
@@ -417,7 +426,8 @@ function get_utente($m)
                 echo "Password: &nbsp;$s"  ;?>&nbsp;&nbsp;&nbsp;
                 <button type="submit" value="Modificapassword" class="btn btn-primary btn-xs" name="Modificapassword" ><i class="material-icons"> edit</i></button></div></li>
               </table></form></ul><?php
-        } 
+        }
+   
     }
     fclose($p);
 
@@ -465,7 +475,7 @@ function cambia_nome($m)
     {
         $cam = $_REQUEST['cambianome'];
         $p = fopen("dati.txt", "r");
-       while(!feof($p))
+        while(!feof($p))
         {
             $arr=fgets($p);
             $vet[$i]=$arr;

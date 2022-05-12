@@ -24,7 +24,7 @@ left: 1100px;
 </style>
 
 <nav>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper deep-purple accent-1">
     <a href="home.php" class="brand-logo"><i class="material-icons">storefront</i>Shopping</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a href="Utente.php"><i class="material-icons">account_box</i></a></li>
