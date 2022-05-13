@@ -412,7 +412,7 @@ function get_utente($m)
             ?><li class="collection-item"><div>
                 <?php
                 echo "Nome: &nbsp;$nome";?>&nbsp;&nbsp;&nbsp;
-                <button type="submit" value="Modificanome" class="btn btn-primary btn-xs" name="Modificanome" ><i class="material-icons">edit </i></button></div></li>
+                <button  type="submit" value="Modificanome" class="btn btn-primary btn-xs" name="Modificanome" ><i class="material-icons">edit </i></button></div></li>
                 <li class="collection-item"><div>
                 <?php
                 echo "Cognome: &nbsp;$cognome";?>&nbsp;&nbsp;&nbsp;
@@ -501,7 +501,9 @@ function cambia_nome($m)
             fwrite($p,$c);
         }
         fclose($p);
+        header("location: home.php");
    }
+  
 }
 
 function cambia_cognome($m)
@@ -564,7 +566,7 @@ function cambia_password($m)
     <form action="" method="post" class="col s12">
       <div class="row">
         <div class="input-field col s5">
-          <input type="text" name="cambianome" id="nome" placeholder="password">
+          <input type="text" name="cambiapassword" id="nome" placeholder="password">
         </div>
       </div>
    </div>
