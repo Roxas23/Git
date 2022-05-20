@@ -12,7 +12,6 @@ session_start();
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
-    <script src="cambia.js"></script>
     <title>Carello</title>
 </head>
 <body>

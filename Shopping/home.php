@@ -381,9 +381,6 @@ session_start();
         $polpo=0;
     }
 
-
-
-
     $i=$_SESSION['identiti'];
     if($i==0)
     {

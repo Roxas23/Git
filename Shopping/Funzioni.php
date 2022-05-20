@@ -358,8 +358,8 @@ if($polpo != 0 )
     if($risotogli==true){$riso = 0;$i++;}
 
     if($bisteccapiu==true){$bistecca = $bistecca+1;$i++;}
-    if($bistecca==true && $bistecca>0){$bistecca = $bistecca-1;$i++;}
-    if($bistecca==true){$bistecca = 0;$i++;}
+    if($bisteccameno==true && $bistecca>0){$bistecca = $bistecca-1;$i++;}
+    if($bisteccatogli==true){$bistecca = 0;$i++;}
 
     if($salsicciapiu==true){$salsiccia = $salsiccia+1;$i++;}
     if($salsicciameno==true && $salsiccia>0){$salsiccia = $salsiccia-1;$i++;}
